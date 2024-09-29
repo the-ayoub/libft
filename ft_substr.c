@@ -12,11 +12,12 @@
 
 #include <string.h>
 #include <stdlib.h>
-char *ft_substr(char const *s, unsigned int start,
- size_t len)
- {
-    int s_len;
-    int i;
+#include "libft.h"
+
+char *ft_substr(char const *s, unsigned int start, size_t len)
+{
+    unsigned int s_len;
+    size_t i;
     char    *dest;
 
     s_len = ft_strlen(s);
@@ -35,5 +36,5 @@ char *ft_substr(char const *s, unsigned int start,
     }
     dest[i] = '\0';
     return (dest);
- }
+}
 
