@@ -9,7 +9,6 @@
 /*   Updated: 2024/09/19 13:40:09 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 size_t	ft_strlen(const char *s)
@@ -21,4 +20,3 @@ size_t	ft_strlen(const char *s)
 		counter++;
 	return (counter);
 }
-

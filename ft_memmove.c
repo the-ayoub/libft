@@ -9,10 +9,7 @@
 /*   Updated: 2024/09/22 16:57:06 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
+#include "libft.h" 
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

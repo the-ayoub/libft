@@ -11,24 +11,23 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
 	i = ft_strlen(s);
-	while (i--> 0)
+	while (i-- > 0)
 	{
 		if (s[i] == (unsigned char)c)
 			return ((char *)&s[i]);
 	}
 	return (NULL);
 }
-int	main(void)
+/*int	main(void)
 {
 	char *s = "hola lucas";
 	char c = 'l';
 
 	printf("%s",ft_strrchr(s, c));
-}
+}*/

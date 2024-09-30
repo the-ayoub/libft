@@ -9,8 +9,9 @@
 /*   Updated: 2024/09/24 20:22:04 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	palabras_count(char *s, char c)
+static int	palabras_count(const char *s, char c)
 {
 	int	i;
 	int	words;
@@ -27,7 +28,7 @@ int	palabras_count(char *s, char c)
 	return (words);
 }
 
-void	*liberar(char **lista, int x)
+static void	*liberar(char **lista, int x)
 {
 	while (x >= 0)
 	{
@@ -38,10 +39,11 @@ void	*liberar(char **lista, int x)
 	return (NULL);
 }
 
-char	**palabras_copy(char *s, char c, char **lista)
+static char	**palabras_copy(const char *s, char c, char **lista)
 {
 	int	i;
 	int	x;
+	int	p;
 
 	i = 0;
 	x = 0;
@@ -63,7 +65,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**lista;
 
-	palabras_count(s, c);
+	//palabras_count(s, c);
 	lista = (char **)malloc((palabras_count(s, c) + 1) * sizeof(char *));
 	if (!lista)
 		return (NULL);
