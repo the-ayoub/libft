@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 03:54:07 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/09/30 21:01:02 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/09/30 21:24:38 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	while (s[i] && c != '\0')
+	if (c == 0)
+		return ((char *)s)
+	while (s[i])
 	{
 		if (s[i] == (unsigned char)c)
 			return ((char *)&s[i]);
