@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 17:01:21 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/09/22 17:03:31 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/09/30 19:35:31 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*dest;
+	char				*dest;
 	unsigned int		s_len;
-	size_t		i;	
+	size_t				i;	
 
 	s_len = ft_strlen(s);
 	if (!s)

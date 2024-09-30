@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 13:32:30 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/09/24 20:22:04 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/09/30 18:58:41 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -65,7 +65,6 @@ char	**ft_split(char const *s, char c)
 {
 	char	**lista;
 
-	//palabras_count(s, c);
 	lista = (char **)malloc((palabras_count(s, c) + 1) * sizeof(char *));
 	if (!lista)
 		return (NULL);

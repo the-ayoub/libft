@@ -6,14 +6,14 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:43:52 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/09/27 18:02:06 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/09/30 19:36:00 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*result;
+	char				*result;
 	unsigned int		i;
 
 	i = 0;
