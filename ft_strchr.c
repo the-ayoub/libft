@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 03:54:07 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/09/30 22:00:16 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/09/30 22:03:31 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ char	*ft_strchr(const char *s, int c)
 		i++;
 	}
 	if ((unsigned char)c == '\0')
-                return ((char *)&s[i]);
+		return ((char *)&s[i]);
 	return (NULL);
 }
