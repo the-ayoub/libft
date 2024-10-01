@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:22:46 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/09/30 18:54:32 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/01 10:06:34 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	word_count(int n)
 	int	i;
 
 	i = 0;
-	if (n < 0)
+	if (n <= 0)
 		i++;
 	while (n != 0)
 	{

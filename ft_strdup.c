@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 20:34:21 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/09/19 21:33:25 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/01 10:04:15 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ char	*ft_strdup(const char *s)
 		dest[i] = s[i];
 		i++;
 	}
+	s1[i] = '\0';
 	return (dest);
 }
