@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 00:44:53 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/10/01 13:42:54 by aybelhaj         ###   ########.fr       */
+/*   Created: 2024/10/02 19:39:31 by aybelhaj          #+#    #+#             */
+/*   Updated: 2024/10/02 19:44:59 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+include "libft.h"
+t_list *ft_lstlast(t_list *lst)
 {
-	size_t	i;
-
-	if(n == 0)
-		return (1);
-	i = 0;
-	while (i < (n - 1) && *s1 == *s2 && (*s1 || *s2))
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next != NULL)
 	{
-		s1++;
-		s2++;
-		i++;
+		lst = lst->next;
 	}
-	return (*(const unsigned char *)s1 - *(const unsigned char *)s2);
+	return (lst);
 }
-/*int main (void)
+/*#include <stdio.h>
+int main (void)
 {
-	char *s1 = "hola";
-	char *s2 = "holai";
-
-
-	printf ("ft:%i\n",ft_strncmp(s1, s2, 4));
-	printf ("org:%i\n:",strncmp(s1, s2, 4));
+	printf("%s"ft_lstlast(ft_lstnew_bonus("12234")));
 }*/

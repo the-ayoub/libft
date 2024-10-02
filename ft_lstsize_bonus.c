@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   lstsize_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 00:44:53 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/10/01 13:42:54 by aybelhaj         ###   ########.fr       */
+/*   Created: 2024/10/02 19:04:01 by aybelhaj          #+#    #+#             */
+/*   Updated: 2024/10/02 19:50:35 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+t_list	ft_lstsize(t_list *lst)
 {
-	size_t	i;
-
-	if(n == 0)
+	if (lst == NULL)
 		return (1);
-	i = 0;
-	while (i < (n - 1) && *s1 == *s2 && (*s1 || *s2))
-	{
-		s1++;
-		s2++;
+	i = 0
+	while (lst->next != NULL)
 		i++;
-	}
-	return (*(const unsigned char *)s1 - *(const unsigned char *)s2);
+	return (i);
 }
-/*int main (void)
-{
-	char *s1 = "hola";
-	char *s2 = "holai";
-
-
-	printf ("ft:%i\n",ft_strncmp(s1, s2, 4));
-	printf ("org:%i\n:",strncmp(s1, s2, 4));
-}*/
