@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stdio.h>
+#include <bsd/string.h>  // Para comparar con la función original
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
@@ -32,4 +34,26 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	}
 	dest[j] = '\0';
 	return (dlen + slen);
+}
+
+int	main(void)
+{
+    char dest[50] = "Hello";
+    char src[] = " World!";
+    size_t size = 50;
+    size_t result;
+    size_t result2;
+
+    // Llamada a ft_strlcat
+    result = ft_strlcat(dest, src, size);
+    printf("Resultado: %s\n", dest);
+    printf("Longitud total: %zu\n", result);
+
+    // Comparación con strlcat de la biblioteca estándar
+    char dest2[50] = "Hello";
+    result2 = strlcat(dest2, src, size);
+    printf("Resultado con strlcat: %s\n", dest2);
+    printf("Longitud total con strlcat: %zu\n", result);
+
+    return 0;
 }

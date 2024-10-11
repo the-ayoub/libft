@@ -6,11 +6,12 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 19:39:31 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/10/02 19:44:59 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/04 17:44:48 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-include "libft.h"
+#include "libft.h"
+
 t_list *ft_lstlast(t_list *lst)
 {
 	if (lst == NULL)

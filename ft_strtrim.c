@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 17:37:29 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/09/23 20:08:33 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/11 13:28:33 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ char	*ft_strtrim(char const *s1, char *set)
 	s2[b] = '\0';
 	return (s2);
 }
-/*0int main (void)
+/*int main (void)
 {
-	char s[]= "     ";
-	char set[]= " ";
-	printf("%s\n",ft_strtrim(s,set));
+	char s[]= "ababbahola que talababbbbaaaba";
+	char set[]= "aba";
+	Printf("%s\n",ft_strtrim(s,set));
 	return (0);
 }*/
