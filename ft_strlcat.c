@@ -6,7 +6,7 @@
 /*   By: aybelhaj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 04:31:56 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/09/30 20:16:41 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/11 16:48:47 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -35,7 +35,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	dest[j] = '\0';
 	return (dlen + slen);
 }
-
+/*
 int	main(void)
 {
     char dest[50] = "Hello";
@@ -57,3 +57,4 @@ int	main(void)
 
     return 0;
 }
+*/

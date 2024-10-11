@@ -6,13 +6,13 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 19:39:31 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/10/04 17:44:48 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/11 16:52:32 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	if (lst == NULL)
 		return (NULL);

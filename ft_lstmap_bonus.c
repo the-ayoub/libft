@@ -15,7 +15,7 @@
 //void *mod(void *lst);
 //void *lib(void *lst);
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*lst_f;
 	t_list	*lst_del;	
