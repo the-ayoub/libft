@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 17:54:51 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/10/12 18:19:30 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/12 18:29:47 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (i < len)
 	{
 		j = 0;
-		while (big[i + j] == little[j])
+		while (big[i + j] == little[j] && len > (i + j))
 		{
 			j++;
 			if (n == j)
