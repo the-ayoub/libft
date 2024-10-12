@@ -6,22 +6,23 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 17:54:51 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/09/19 18:31:22 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/12 18:19:30 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
 	size_t	n;
-	char	*s;
 
-	s = (char *)big;
-	if (!little)
-		return (s);
+	if (!big)
+		return (0);
+	if (*little == '\0')
+		return ((char *)big);
 	i = 0;
 	n = ft_strlen(little);
 	while (i < len)
@@ -31,16 +32,17 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		{
 			j++;
 			if (n == j)
-				return (&s[i]);
+				return ((char *)&big[i]);
 		}
 		i++;
 	}
 	return (NULL);
 }
-/*int	main(void)
+/*
+int	main(void)
 {
-	char big[] = "Hola mundo ayoub";
-	char little[] = "mundo";
-	printf("Resultat: %s ", ft_strnstr(big,little,14));
+	char big[] = "Hola mun mund mundo ayoub";
+	char little[] = "";
+	printf("Resultat: %s ", ft_strnstr(big,little,10));
 	return (0);
 }*/
