@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 12:59:07 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/10/10 21:57:24 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/12 18:01:20 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*lst_del;	
 	t_list	*new;
 
+	if (!lst || !f)
+		return (NULL);
 	lst_f = lst;
 	while (lst_f->next != NULL)
 	{

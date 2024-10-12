@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 12:47:03 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/10/11 16:01:28 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/12 17:57:56 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*tmp;
 
+	if (!lst || !f)
+		return ;
 	while (lst->next != NULL)
 	{
 		tmp = lst->next;

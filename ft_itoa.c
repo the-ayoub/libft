@@ -6,11 +6,12 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:22:46 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/10/01 10:06:34 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/12 17:57:12 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	word_count(int n)
 {
@@ -26,48 +27,26 @@ int	word_count(int n)
 	}
 	return (i);
 }
-/*char    *if_errors(int n)
-{
-    char    *src;
-
-     if (n == 0)
-        {
-                src = ft_calloc(1, sizeof(char));
-                if (!src)
-                        return (NULL);
-                return (src = "0");
-        }
-        if (n == -2147483648)
-        {
-                src = ft_calloc(12, sizeof(char));
-                if (!src)
-                        return (NULL);
-                return (src = "-2147483648");
-        }
-        return (src);
-}*/
 
 char	*ft_itoa(int n)
 {
 	char			*src;
 	int				i;
+	unsigned int	num;
 
 	i = word_count(n);
 	src = ft_calloc(i + 1, sizeof(char));
-	if (n == 0)
-	{
-		src[0] = '0';
-		return (src);
-	}
+	src[0] = '0';
+	num = n;
 	if (n < 0)
 	{
 		src[0] = '-';
-		n = -n;
+		num = -n;
 	}
-	while (n > 0)
+	while (num > 0)
 	{
-		src[i - 1] = (n % 10) + '0';
-		n = n / 10;
+		src[i - 1] = (num % 10) + '0';
+		num = num / 10;
 		i--;
 	}
 	return (src);
@@ -75,9 +54,9 @@ char	*ft_itoa(int n)
 /*int main(void) {
     int n;
     char *test;
-    n = 4215;
+    n = -2147483648;
     test = ft_itoa(n);
     printf("%s",test);
-    free(test);
+    //free(test);
     return 0;
 }*/

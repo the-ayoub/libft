@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 00:44:53 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/10/01 13:42:54 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/12 17:58:39 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
+	if (!s1 || !s2)
+		return (0);
 	if (n == 0)
-		return (1);
+		return (0);
 	i = 0;
 	while (i < (n - 1) && *s1 == *s2 && (*s1 || *s2))
 	{
