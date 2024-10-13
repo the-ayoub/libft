@@ -6,11 +6,12 @@
 /*   By: xviladri <xviladri@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 13:24:05 by xviladri          #+#    #+#             */
-/*   Updated: 2024/10/13 15:18:51 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/13 18:55:58 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	count_words(char *str, char c)
 {
@@ -36,9 +37,12 @@ char	*get_next_word(char const **s, char c)
 	i = 0;
 	str = (char *)*s;
 	while (str[i] && str[i] != c)
+	{
 		i++;
+	}
 	*s += i;
-	return (ft_substr(str, 0, i));
+	str = ft_substr(str, 0, i);
+	return (str);
 }
 
 void	free_array(char **str)
@@ -82,15 +86,24 @@ char	**ft_split(char const *s, char c)
 	new[y] = NULL;
 	return (new);
 }
-/*int	main(void)
+/*
+#include <stdio.h>
+
+int	main(void)
 {
-	char	str[];
+	// char	str[];
 	char	c;
 	char	**res;
 	int		i;
 
-	str[] = "     hola  que  tal";
-	c = ' ';
+	//str[] = "     hola  que  tal";
+	char str[] = "lorem ipsum dolor sit amet, 
+	consectetur adipiscing elit. Sed non risus. 
+	Suspendisse lectus tortor, dignissim sit amet, 
+	adipiscing nec, ultricies sed, dolor. Cras 
+	elementum ultricies diam. Maecenas ligula massa, 
+	varius a, semper congue, euismod non, mi.";
+	c = 'i';
 	res = ft_split(str, c);
 	i = 0;
 	while (res[i])

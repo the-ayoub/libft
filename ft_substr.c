@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 17:01:21 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/09/30 19:35:31 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/13 18:52:46 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!dest)
 		return (NULL);
 	i = 0;
-	while (i < len && s[start + 1])
+	while (i < len && s[start + i])
 	{
 		dest[i] = s[start + i];
 		i++;
@@ -35,3 +35,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	dest[i] = '\0';
 	return (dest);
 }
+/*
+#include<stdio.h>
+
+int main()
+{
+	char *s = ".";
+	int len = ft_strlen(s);
+	printf("len = %d, <%s>\n", len, ft_substr(s, 0, len));
+}*/
