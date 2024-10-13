@@ -3,70 +3,101 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
+/*   By: xviladri <xviladri@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 13:32:30 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/09/30 18:58:41 by aybelhaj         ###   ########.fr       */
+/*   Created: 2024/10/12 13:24:05 by xviladri          #+#    #+#             */
+/*   Updated: 2024/10/13 15:01:31 by xviladri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-static int	palabras_count(const char *s, char c)
+int	count_words(char *str, char c)
 {
 	int	i;
-	int	words;
+	int	j;
 
 	i = 0;
-	words = 0;
-	while (s[i])
+	j = 0;
+	while (str[i])
 	{
-		if (s[i] == c || s[i + 1] == '\0')
-			if (i > 0 && s[i - 1] != c)
-				words++;
+		if (str[i] != c && (str[i + 1] == c || str[i + 1] == '\0'))
+			j++;
 		i++;
 	}
-	return (words);
+	return (j);
 }
 
-static void	*liberar(char **lista, int x)
+char	*get_next_word(char const **s, char c)
 {
-	while (x >= 0)
-	{
-		free(lista[x]);
-		x--;
-	}
-	free(lista);
-	return (NULL);
-}
-
-static char	**palabras_copy(const char *s, char c, char **lista)
-{
-	int	i;
-	int	x;
-	int	p;
+	int		i;
+	char	*str;
 
 	i = 0;
-	x = 0;
-	while (s[i])
-	{
-		while (s[i] == c)
-			i++;
-		p = i;
-		while (s[i++] != c)
-			i++;
-		lista[x] = ft_substr(s, p, i - p);
-		if (!lista[x++])
-			return (liberar(lista, x - 2));
-	}
-	return (lista);
+	str = (char *)*s;
+	while (str[i] && str[i] != c)
+		i++;
+	*s += i;
+	return (ft_substr(str, 0, i));
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**lista;
+	int		j;
+	char	**new;
+	int		y;
 
-	lista = (char **)malloc((palabras_count(s, c) + 1) * sizeof(char *));
-	if (!lista)
+	y = 0;
+	j = count_words((char *)s, c);
+	new = (char **)malloc((j + 1) * sizeof(char *));
+	if (!new)
 		return (NULL);
-	return (palabras_copy(s, c, lista));
+	while (*s != '\0')
+	{
+		if (*s != c)
+		{
+			new[y] = get_next_word(&s, c);
+			if (!new[y++])
+			{
+				free_array(new);
+				return (NULL);
+			}
+		}
+		else
+			s++;
+	}
+	new[y] = NULL;
+	return (new);
 }
+
+void	free_array(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+}
+/*int	main(void)
+{
+	char	str[];
+	char	c;
+	char	**res;
+	int		i;
+
+	str[] = "     hola  que  tal";
+	c = ' ';
+	res = ft_split(str, c);
+	i = 0;
+	while (res[i])
+	{
+		printf("%s\n", res[i]);
+		i++;
+	}
+	free_array(res);
+	return (0);
+}*/
