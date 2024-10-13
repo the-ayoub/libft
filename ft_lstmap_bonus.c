@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 12:59:07 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/10/13 17:28:01 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/13 17:58:06 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,40 +17,43 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*lst_f;
-	t_list	*lst_del;	
-	t_list	*new;
+	t_list	*new_list;
+	t_list	*new_node;
 
 	if (!lst || !f || !del)
 		return (NULL);
-	lst_f = lst;
-	lst_del = new;
-	while (lst_f != NULL)
+	new_list = NULL;
+	while (lst != NULL)
 	{
-		new = ft_lstnew(f(lst_f));
-		if (!lst_del)
-			del(lst_del);
-		new = new->next;
+		new_node = ft_lstnew(f(lst->content));
+		if (new_node == NULL)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, new_node);
+		lst = lst->next;
 	}
-	return (new);
+	return (new_list);
 }
-/*void *mod(void *lst)
+/*
+void *mod(t_list *lst)
 {
 	t_list	*lst_local;
 
 	lst_local = (t_list *)lst;
 	if(!lst_local)
 		return (NULL);
-	lst_local->content =  lst_local->content + 32;
+	lst_local->content = "hola";
 	return (lst_local);
 }
 
-void lib(void *lst)
+void lib(t_list *lst)
 {
 	t_list *temp;
-	t_list tsl_local;
+	t_list lst_local;
 
-	lst_local = (t_list *)lst;
+	lst_local = lst;
         if(!lst_local)
                 return (NULL);
         while (*lst_local)
