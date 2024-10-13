@@ -6,7 +6,7 @@
 /*   By: xviladri <xviladri@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 13:24:05 by xviladri          #+#    #+#             */
-/*   Updated: 2024/10/13 15:01:31 by xviladri         ###   ########.fr       */
+/*   Updated: 2024/10/13 15:18:51 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,19 @@ char	*get_next_word(char const **s, char c)
 	return (ft_substr(str, 0, i));
 }
 
+void	free_array(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		j;
@@ -68,19 +81,6 @@ char	**ft_split(char const *s, char c)
 	}
 	new[y] = NULL;
 	return (new);
-}
-
-void	free_array(char **str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
 }
 /*int	main(void)
 {
