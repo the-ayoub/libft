@@ -29,10 +29,12 @@ $(NAME): $(OBJS)
 # Create the static library
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
-	
-bonus: $(OBJS) $(BONUS_OBJS)
+
+bonus : .bonus
+.bonus: $(OBJS) $(BONUS_OBJS)
 	$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
-        		
+	touch .bonus
+
 %.o: %.c $(HEADER) Makefile
 	$(CC) $(CFLAGS) -c $< -o $@
 
