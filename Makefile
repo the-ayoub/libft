@@ -23,9 +23,6 @@ RM = rm -f
 AR = ar rsc
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
-
 # Create the static library
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
@@ -33,9 +30,12 @@ $(NAME): $(OBJS)
 bonus : .bonus
 .bonus: $(OBJS) $(BONUS_OBJS)
 	$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
-	touch .bonus
+	@ touch .bonus
 
 %.o: %.c $(HEADER) Makefile
+	$(CC) $(CFLAGS) -c $< -o $@
+
+%_bonus.o: %_bonus.c $(HEADER) Makefile
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
