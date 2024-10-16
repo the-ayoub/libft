@@ -6,7 +6,7 @@
 /*   By: aybelhaj <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 19:17:50 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/10/15 18:06:06 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/15 17:57:58 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,12 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-/*
 #include <stdio.h>
 int main (void)
 {
 	char a[4] = "aygb";
 	int c = 'c';
-	int n = 10;
+	int n = 2;
 	printf("%s",(char *)ft_memset(a,c,n));
 	return (0);
-}*/
+}

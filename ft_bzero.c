@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 13:12:54 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/09/22 16:54:29 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/15 17:27:13 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,21 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-/*int	main (int argc, char **argv)
+/*
+#include <stdio.h>
+int	main (void)
 {
-	if (argc == 2)
+	int i = 0;
+	char str[9] = "123456789";
+	ft_bzero(str, 5);
+	while (9 > i)
 	{
-		ft_bzero(argv[1],5);
-		printf("%c", *argv[1]);
+		if (str[i] == '\0')
+			printf("0");
+		else
+			printf("%c",str[i]);
+		i++;
 	}
 	return (0);
-}*/
+}
+*/

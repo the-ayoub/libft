@@ -24,13 +24,16 @@ AR = ar rsc
 all: $(NAME)
 
 # Create the static library
+ifndef BONUS
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
+else
+$(NAME): $(BONUS_OBJS)
+	$(AR) $(NAME) $(BONUS_OBJS)
+endif
 
-bonus : .bonus
-.bonus: $(OBJS) $(BONUS_OBJS)
-	$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
-	@ touch .bonus
+bonus: 
+	@make BONUS=42 --no-print-directory
 
 %.o: %.c $(HEADER) Makefile
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -39,7 +42,7 @@ bonus : .bonus
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS) .bonus
 
 fclean: clean
 	$(RM) $(NAME)

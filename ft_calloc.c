@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 18:35:06 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/09/23 19:26:15 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/16 14:31:11 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,3 +22,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(tmp, nmemb * size);
 	return (tmp);
 }
+/*
+#include <stdio.h>
+int main(void)
+{
+	printf("%p\n",calloc(2147483659,1));
+}*/
