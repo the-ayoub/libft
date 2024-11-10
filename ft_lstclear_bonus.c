@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 11:57:29 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/10/11 16:50:48 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/11/10 22:53:07 by rmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		free (*lst);
 		*lst = temp;
 	}
-    *lst = NULL;
+	*lst = NULL;
 }
