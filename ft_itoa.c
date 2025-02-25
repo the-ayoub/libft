@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-int	word_count(int n)
+static int	word_count(int n)
 {
 	int	i;
 

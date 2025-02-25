@@ -12,7 +12,6 @@ BONUS_SRCS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
                                 ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
                                 ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
-# Bonus Object files
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 NAME = libft.a
@@ -23,7 +22,6 @@ RM = rm -f
 AR = ar rsc
 all: $(NAME)
 
-# Create the static library
 ifndef BONUS
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)

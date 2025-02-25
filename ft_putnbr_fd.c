@@ -6,7 +6,7 @@
 /*   By: aybelhaj <aybelhaj@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 15:21:16 by aybelhaj          #+#    #+#             */
-/*   Updated: 2024/09/29 15:28:34 by aybelhaj         ###   ########.fr       */
+/*   Updated: 2024/10/16 15:43:45 by aybelhaj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -32,3 +32,11 @@ void	ft_putnbr_fd(int n, int fd)
 	c = (n % 10) + '0';
 	write(fd, &c, 1);
 }
+/*
+#include <stdio.h>
+int main (void)
+{
+    int c = 555;
+    int a = 1;
+    ft_putnbr_fd(c,a);
+}*/
